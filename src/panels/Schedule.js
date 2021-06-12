@@ -26,7 +26,7 @@ class Schedule extends React.Component {
 			{
 				numberOfLesson: 1,
 				isSingle: true,
-				lessonName: 'Комп. сети',
+				lessonName: 'Компik. сети',
 				lessonType: 'лекционное занятие',
 				auditorium: '2-103',
 				teacher: 'Горбачев Д. В.'},
