@@ -2,7 +2,7 @@
 
 # VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
 
-## LINK - https://vk.com/app7536016
+## LINK - https://vk.com/
 
 
 
