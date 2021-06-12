@@ -12,9 +12,8 @@ import Headline from '@vkontakte/vkui/dist/components/Typography/Headline/Headli
 import Subhead from '@vkontakte/vkui/dist/components/Typography/Subhead/Subhead';
 import Text from '@vkontakte/vkui/dist/components/Typography/Text/Text';
 import Icon16InfoOutline from '@vkontakte/icons/dist/16/info_outline';
-import loadGroups from './Home';
 
-console.log(loadGroups.groups)
+
 const osName = platform();
 
 class Schedule extends React.Component {
@@ -27,38 +26,38 @@ class Schedule extends React.Component {
 			{
 				numberOfLesson: 1,
 				isSingle: true,
-				lessonName: 'Название занятия1',
-				lessonType: 'тип занятия1',
-				auditorium: 'ауд.1',
-				teacher: 'имя преподавателя'},
+				lessonName: 'Комп. сети',
+				lessonType: 'лекционное занятие',
+				auditorium: '2-103',
+				teacher: 'Горбачев Д. В.'},
 			{
 				numberOfLesson: 2,
 				isSingle: true,
-				lessonName: 'Название занятия2',
-				lessonType: 'тип занятия2',
-				auditorium: 'ауд2',
-				teacher: 'имя преподавателя2'},
+				lessonName: 'WEB-программирование',
+				lessonType: 'практическое занятие',
+				auditorium: '1-303',
+				teacher: 'Тагирова М. В.'},
 			{
 				numberOfLesson: 3,
 				isSingle: false,
 				subGroups: [
 					{
 						lessonName: 'Физ-ра (ю)',
-						lessonType: 'тип занятия3',
-						auditorium: 'ауд3',
-						teacher: 'имя преподавателя3'
+						lessonType: 'прaктическое занятие',
+						auditorium: '18-201',
+						teacher: 'Мышин П.П.'
 					},
 					{
 						lessonName: 'Физ-ра (д)',
-						lessonType: 'тип занятия4',
-						auditorium: 'ауд4',
-						teacher: 'имя преподавателя4.'
+						lessonType: 'парктическое занятие',
+						auditorium: '1-202',
+						teacher: 'Валенок П.П.'
 					},
 					{
 						lessonName: 'Физ-ра (с)',
-						lessonType: 'тип занятия5',
-						auditorium: 'ауд5',
-						teacher: 'имя преподавателя5'
+						lessonType: 'парктическое занятие',
+						auditorium: '1-203',
+						teacher: 'Одноног П.П.'
 					},
 			]}
 		]
@@ -71,7 +70,7 @@ class Schedule extends React.Component {
 					left={<PanelHeaderButton onClick={this.props.go} data-to="home">
 						{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 					</PanelHeaderButton>}>
-					
+					Расписание
 				</PanelHeader>
 				<Group title="Schedule">
 					<Div id="date">
@@ -111,7 +110,6 @@ function SingleGroupPair(props) {
 		data-numberoflesson={props.lesson.numberOfLesson}
 		data-auditorium={props.lesson.auditorium}
 		data-teacher={props.lesson.teacher}>
-			
 			<Div className='numberOfPair'>
 				<Headline weight="regular">{props.lesson.numberOfLesson}</Headline>
 			</Div>
@@ -123,7 +121,6 @@ function SingleGroupPair(props) {
 					<Text weight="regular">{props.lesson.lessonType}</Text>
 				</Div>
 			</Div>
-			
 			<Div className='auditoriumOfPair'>
 				<Subhead id='textOfAuditorium' weight="medium">{props.lesson.auditorium}</Subhead>
 			</Div>
@@ -150,7 +147,6 @@ function NotSingleGroupPair(props) {
 					data-numberoflesson={props.lesson.numberOfLesson}
 					data-auditorium={subGroup.auditorium}
 					data-teacher={subGroup.teacher}>
-						
 						<Div className='infoOfPair'>
 							<Div className='nameOfPair'>
 								<Subhead weight="bold">{subGroup.lessonName}</Subhead>
